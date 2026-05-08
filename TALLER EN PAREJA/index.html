@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refuerzo Escolar - Tutores en Casa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header>
+        <h1 class="titulo">Tutorías Educativas: <span>Refuerzo Escolar</span></h1>
+    </header>
+
+    <div class="nav-bg">
+        <nav class="navegacion-principal contenedor">
+            <a href="#inicio">Inicio</a>
+            <a href="#sobre-nosotros">Nosotros</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </div>
+
+    <main class="contenedor-principal">
+        
+        <section id="inicio" class="contenedor">
+            <div class="alinear-centro">
+                <img src="imagenes/images.jpeg" alt="Niños estudiando con sus tutores" style="max-width: 100%; border-radius: 1rem; margin-top: 2rem;" >
+                <h2><img src="iconos/book-2.svg" alt="Libro"> Ayuda con tareas y nivelación académica</h2>
+            </div>
+        </section>
+
+        <section id="sobre-nosotros" class="contenedor sombra">
+            <h2>Sobre Nosotros</h2>
+            <p>
+                Somos un equipo de dos profesores apasionados por la educación, dedicados a brindar apoyo escolar personalizado para niños de primaria. Nuestra misión es ayudar a los estudiantes a superar sus dificultades académicas en un ambiente de confianza y paciencia, adaptándonos al ritmo de aprendizaje de cada pequeño.
+            </p>
+            <p>
+                Ofrecemos asistencia en la realización de tareas diarias, preparación para exámenes y refuerzo en materias clave como matemáticas y lenguaje. Creemos firmemente que con la guía adecuada de dos tutores comprometidos, cualquier niño puede alcanzar su máximo potencial académico y recuperar la motivación por aprender.
+            </p>
+
+            <div class="alinear-centro">
+                <a href="#contacto" class="boton">¡Reserva una Clase Hoy!</a>
+            </div>
+        </section>
+
+        <section id="contacto" class="contenedor">
+            <form class="formulario" action="#">
+                <fieldset>
+                    <legend>Contáctanos para más información</legend>
+
+                    <div class="campo">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="correo">Correo electrónico:</label>
+                        <input type="email" id="correo" name="correo" placeholder="tu@email.com" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" placeholder="¿En qué materia necesitan ayuda?" required></textarea>
+                    </div>
+
+                    <div class="alinear-derecha">
+                        <button type="submit" class="boton">Enviar Solicitud</button>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="contenedor">
+        <p>&copy; 2024 - Taller de Desarrollo Web - Trabajo en Pareja</p>
+    </footer>
+
+</body>
+</html>
