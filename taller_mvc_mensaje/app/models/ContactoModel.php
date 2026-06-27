@@ -7,7 +7,7 @@ class ContactoModel {
 public static function guardarMsj($nombre, $correo, $asunto, $mensaje)
 {
 
-$conn = Database::getConnection();
+$conn = Conexion::getConnection();
 $stmt = $conn->prepare("INSERT INTO mensajes (nombre, correo, asunto, mensaje) VALUES (?, ?, ?, ?)");
 $stmt->bind_param("ssss", $nombre, $correo, $asunto, $mensaje);
 
@@ -16,7 +16,7 @@ return $stmt->execute();
 
  // Obtener todos los mensajes
   public static function obtenerTodos() {
-    $conn = Database::getConnection();
+    $conn = Conexion::getConnection();
     $resultado = $conn->query("SELECT * FROM mensajes ORDER BY fecha DESC");
     $mensajes = [];
     while ($fila = $resultado->fetch_assoc()) {
