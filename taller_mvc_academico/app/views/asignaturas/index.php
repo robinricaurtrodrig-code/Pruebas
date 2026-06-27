@@ -55,7 +55,7 @@
             </tbody>
         </table>
     <?php else: ?>
-        <p>No se encontraron asignaturas.</p>
+        <p>No se han encontrado asignaturas.</p>
     <?php endif; ?>
 </body>
 </html>
