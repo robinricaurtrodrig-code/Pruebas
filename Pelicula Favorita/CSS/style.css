@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Open+Sans:wght@400;700&display=swap');
+
+/*SELECTORES DE TIPO */
+body {
+    background-color: #0b132b; /* Azul/Negro profundo de cine */
+    color: #ffffff;            /* Texto claro para contraste */
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+main {
+    max-width: 800px;      /* Centra el contenido */
+    margin: 0 auto;        /* Margen automático para centrar horizontalmente */
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    margin-bottom: 15px;
+    color: #2563eb;        /* Azul destacado */
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;      /* Mejora la lectura del párrafo */
+}
+
+/*SELECTOR DE ID (¡Obligatorio por Rúbrica!)*/
+#titulo-pelicula {
+    font-size: 56px;
+    color: hsl(51, 70%, 44%);         /* Dorado Spider-Man */
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* SELECTORES DE CLASE*/
+.portada {
+    background-color: #1c2541;
+    border: 4px solid #2563eb;  /* Borde azul de tu diseño */
+    padding: 40px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.imagen-pelicula {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border: 4px solid #e11d48;  /* Borde rojo arácnido */
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+/* Efecto opcional para la imagen si el usuario pasa el mouse */
+.imagen-pelicula:hover {
+    transform: scale(1.02);     /* Se agranda un poquito visualmente */
+}
+
+.seccion-datos {
+    background-color: #1c2541;
+    padding: 30px;
+    border-left: 5px solid #2563eb;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.seccion-enlace {
+    background-color: #1c2541;
+    padding: 20px;
+    border-left: 5px solid #00b4d8;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.enlace-boton {
+    display: inline-block;
+    background-color: #e11d48;  /* Fondo rojo */
+    color: white;
+    text-decoration: none;      /* Quita el subrayado */
+    padding: 12px 24px;         /* Le da forma de botón */
+    margin-top: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;  /* Suaviza la animación del hover */
+}
+
+.enlace-boton:hover {
+    background-color: #b91c1c;  /* Rojo más oscuro al pasar el mouse */
+    transform: translateY(-3px); /* Se eleva un poco */
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.4);
+}
+
+.icono-info {
+    width: 24px;         /* Ajusta el tamaño para que no se vea gigante */
+    height: 24px;
+    margin-right: 10px;  /* Separa el ícono del texto "Más Información" */
+    vertical-align: middle; /* Alinea el ícono perfectamente al centro del texto */
+    
+    /* Este filtro convierte un ícono negro en color dorado brillante */
+    filter: invert(81%) sepia(59%) saturate(705%) hue-rotate(354deg) brightness(103%) contrast(105%);
+}
+
+/* DISEÑO RESPONSIVO (Media Queries para móviles)*/
+@media (max-width: 768px) {
+    #titulo-pelicula {
+        font-size: 38px;        /* Más pequeño en pantallas móviles */
+    }
+
+    .seccion-datos,
+    .seccion-enlace,
+    .portada {
+        padding: 20px;          /* Reduce espacios internos en pantallas chicas */
+    }
+}
