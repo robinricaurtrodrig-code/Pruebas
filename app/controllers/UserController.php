@@ -2,7 +2,7 @@
 // CONTROLADOR DE USUARIOS
 // Coordina las acciones entre el modelo User y las vistas de gestión de personal.
 
-require_once '../app/config/Database.php';
+require_once '../app/config/Conexion.php';
 require_once '../app/models/User.php';
 
 class UserController {

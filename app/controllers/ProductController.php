@@ -2,7 +2,7 @@
 // CONTROLADOR DE PRODUCTOS
 // Coordina todas las acciones CRUD entre el modelo Product y las vistas de productos.
 
-require_once '../app/config/Database.php';
+require_once '../app/config/Conexion.php';
 require_once '../app/models/Product.php';
 
 class ProductController {

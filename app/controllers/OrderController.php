@@ -2,7 +2,7 @@
 // CONTROLADOR DE PEDIDOS
 // Coordina las acciones entre los modelos Order, Product, User y la vista de pedidos.
 
-require_once '../app/config/Database.php';
+require_once '../app/config/Conexion.php';
 require_once '../app/models/Order.php';
 require_once '../app/models/Product.php';
 require_once '../app/models/User.php';

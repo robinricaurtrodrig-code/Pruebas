@@ -2,7 +2,7 @@
 // CONTROLADOR DE CATEGORÍAS
 // Coordina las acciones entre el modelo Category y las vistas de categorías.
 
-require_once '../app/config/Database.php';
+require_once '../app/config/Conexion.php';
 require_once '../app/models/Category.php';
 
 class CategoryController {
