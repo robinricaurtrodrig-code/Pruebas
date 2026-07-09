@@ -8,7 +8,7 @@ class Product {
     // Obtiene todos los productos con el nombre de su categoría asociada.
     // Realiza un JOIN con la tabla 'categorias' y ordena por fecha de creación descendente.
     public static function readAll() {
-        $conn = Database::getConnection();
+        $conn = Conexion::getConnection();
         $query = "SELECT p.*, c.nombre as categoria_nombre 
                   FROM " . self::$table_name . " p 
                   INNER JOIN categorias c ON p.categoria_id = c.id 
@@ -21,7 +21,7 @@ class Product {
 
     // Inserta un nuevo producto en la base de datos con todos sus datos sanitizados.
     public static function create($categoria_id, $nombre, $precio, $descripcion, $disponible) {
-        $conn = Database::getConnection();
+        $conn = Conexion::getConnection();
         $query = "INSERT INTO " . self::$table_name . " 
                   SET categoria_id=:categoria_id, nombre=:nombre, precio=:precio, descripcion=:descripcion, disponible=:disponible";
 
@@ -47,7 +47,7 @@ class Product {
 
     // Elimina un producto de la base de datos por su ID.
     public static function delete($id) {
-        $conn = Database::getConnection();
+        $conn = Conexion::getConnection();
         $query = "DELETE FROM " . self::$table_name . " WHERE id = :id";
         $stmt = $conn->prepare($query);
         $id = htmlspecialchars(strip_tags($id));
@@ -60,7 +60,7 @@ class Product {
 
     // Obtiene los datos de un producto específico por su ID.
     public static function readOne($id) {
-        $conn = Database::getConnection();
+        $conn = Conexion::getConnection();
         $query = "SELECT * FROM " . self::$table_name . " WHERE id = :id LIMIT 0,1";
         $stmt = $conn->prepare($query);
         $stmt->bindParam(":id", $id);
@@ -70,7 +70,7 @@ class Product {
 
     // Actualiza los datos completos de un producto existente.
     public static function update($id, $categoria_id, $nombre, $precio, $descripcion, $disponible) {
-        $conn = Database::getConnection();
+        $conn = Conexion::getConnection();
         $query = "UPDATE " . self::$table_name . " 
                   SET categoria_id = :categoria_id, nombre = :nombre, precio = :precio, descripcion = :descripcion, disponible = :disponible 
                   WHERE id = :id";

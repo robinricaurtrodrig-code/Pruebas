@@ -7,7 +7,7 @@ class Category {
 
     // Obtiene todas las categorías ordenadas alfabéticamente por nombre.
     public static function readAll() {
-        $conn = Database::getConnection();
+        $conn = Conexion::getConnection();
         $query = "SELECT * FROM " . self::$table_name . " ORDER BY nombre ASC";
         $stmt = $conn->prepare($query);
         $stmt->execute();
@@ -17,7 +17,7 @@ class Category {
     // Crea una nueva categoría con los datos proporcionados.
     // Sanitiza nombre y descripción antes de insertar.
     public static function create($nombre, $descripcion) {
-        $conn = Database::getConnection();
+        $conn = Conexion::getConnection();
         $query = "INSERT INTO " . self::$table_name . " SET nombre=:nombre, descripcion=:descripcion";
         $stmt = $conn->prepare($query);
 
@@ -32,7 +32,7 @@ class Category {
 
     // Devuelve los datos de una categoría específica por su ID.
     public static function readOne($id) {
-        $conn = Database::getConnection();
+        $conn = Conexion::getConnection();
         $query = "SELECT * FROM " . self::$table_name . " WHERE id = :id LIMIT 0,1";
         $stmt = $conn->prepare($query);
         $stmt->bindParam(":id", $id);
@@ -42,7 +42,7 @@ class Category {
 
     // Actualiza el nombre y descripción de una categoría existente.
     public static function update($id, $nombre, $descripcion) {
-        $conn = Database::getConnection();
+        $conn = Conexion::getConnection();
         $query = "UPDATE " . self::$table_name . " SET nombre=:nombre, descripcion=:descripcion WHERE id=:id";
         $stmt = $conn->prepare($query);
 
@@ -59,7 +59,7 @@ class Category {
 
     // Elimina una categoría de la base de datos por su ID.
     public static function delete($id) {
-        $conn = Database::getConnection();
+        $conn = Conexion::getConnection();
         $query = "DELETE FROM " . self::$table_name . " WHERE id = :id";
         $stmt = $conn->prepare($query);
         $stmt->bindParam(":id", $id);

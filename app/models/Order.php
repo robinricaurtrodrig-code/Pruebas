@@ -8,7 +8,7 @@ class Order {
     // Obtiene todos los pedidos con el nombre del producto y del usuario que atendió.
     // Realiza un JOIN con las tablas 'productos' y 'usuarios' para mostrar datos completos.
     public static function readAll() {
-        $conn = Database::getConnection();
+        $conn = Conexion::getConnection();
         $query = "SELECT p.id, pr.nombre AS producto_name, u.nombre AS usuario_name, p.cantidad, p.total, p.fecha 
                   FROM " . self::$table_name . " p
                   INNER JOIN productos pr ON p.producto_id = pr.id
@@ -22,7 +22,7 @@ class Order {
 
     // Registra un nuevo pedido calculado con producto, usuario, cantidad y total.
     public static function create($producto_id, $usuario_id, $cantidad, $total) {
-        $conn = Database::getConnection();
+        $conn = Conexion::getConnection();
         $query = "INSERT INTO " . self::$table_name . " SET producto_id=:producto_id, usuario_id=:usuario_id, cantidad=:cantidad, total=:total";
         $stmt = $conn->prepare($query);
 
