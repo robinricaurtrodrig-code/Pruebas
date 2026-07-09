@@ -1,3 +1,16 @@
+<?php
+// Valores por defecto para evitar errores si el producto no existe
+if (!isset($producto) || !is_array($producto)) {
+    $producto = [
+        'id' => '',
+        'nombre' => '',
+        'categoria_id' => 1,
+        'precio' => '',
+        'descripcion' => '',
+        'disponible' => 1,
+    ];
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>

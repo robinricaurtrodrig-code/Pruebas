@@ -59,7 +59,7 @@
                 <label for="ped_producto">Selecciona el Producto:</label>
                 <select id="ped_producto" name="producto_id">
                     <option value="">-- ¿Qué va a llevar el cliente? --</option>
-                    <?php foreach ($productos as $p): ?>
+                    <?php foreach (($productos ?? []) as $p): ?>
                         <option value="<?php echo $p['id']; ?>"><?php echo htmlspecialchars($p['nombre']); ?> ($<?php echo $p['precio']; ?>)</option>
                     <?php endforeach; ?>
                 </select>
@@ -70,7 +70,7 @@
                 <label for="ped_usuario">Personal que atiende:</label>
                 <select id="ped_usuario" name="usuario_id">
                     <option value="">-- Empleado en caja --</option>
-                    <?php foreach ($usuarios as $u): ?>
+                    <?php foreach (($usuarios ?? []) as $u): ?>
                         <option value="<?php echo $u['id']; ?>"><?php echo htmlspecialchars($u['nombre']); ?> (<?php echo $u['rol']; ?>)</option>
                     <?php endforeach; ?>
                 </select>
